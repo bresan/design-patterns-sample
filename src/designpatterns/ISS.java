@@ -2,7 +2,7 @@ package designpatterns;
 
 public class ISS {
 	
-	public double calculaICMS(Orcamento orcamento) {
+	public double calculaISS(Orcamento orcamento) {
 		return orcamento.getValor() * 0.6;
 	}
 }
