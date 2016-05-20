@@ -2,6 +2,8 @@ package designpatterns;
 
 public class DescontoPorVendaCasada implements Desconto {
 
+	private Desconto proximo;
+
 	@Override
 	public double desconta(Orcamento orcamento) {
 	
@@ -14,7 +16,7 @@ public class DescontoPorVendaCasada implements Desconto {
 			return orcamento.getValor() * 0.05;
 		}
 		
-		return 0;
+		return proximo.desconta(orcamento);
 	}
 	
 	private boolean existe(String nomeDoItem, Orcamento orcamento) {
@@ -28,8 +30,7 @@ public class DescontoPorVendaCasada implements Desconto {
 
 	@Override
 	public void setProximo(Desconto proximoDesconto) {
-		// TODO Auto-generated method stub
-		
+		this.proximo = proximoDesconto;
 	}
 
 }
