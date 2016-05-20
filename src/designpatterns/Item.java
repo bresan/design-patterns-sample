@@ -2,19 +2,19 @@ package designpatterns;
 
 public class Item {
 
-	private String valor;
 	private String nome;
+	private double valor;
 
-	public Item(String nome, String valor) {
+	public Item(String nome, double valor) {
 		this.nome = nome;
 		this.valor = valor;
 	}
 
-	public String getValor() {
+	public double getValor() {
 		return valor;
 	}
 
-	public void setValor(String valor) {
+	public void setValor(double valor) {
 		this.valor = valor;
 	}
 

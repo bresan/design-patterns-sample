@@ -3,13 +3,14 @@ package designpatterns;
 public class CalculadoraDeDesconto {
 
 	public double calcula(Orcamento orcamento) {
-		// se tiver mais de 5 itens
-		if (orcamento.getItens().size() > 5) {
-			return orcamento.getValor() * 0.1;
-		} else if (orcamento.getValor() > 500) {
-			return orcamento.getValor() * 00.7;
-		}
+	
+		Desconto d1 = new DescontoPorCincoItens();
+		Desconto d2 = new DescontoPorMaisDeQuinhentosReais();
+		Desconto d3 = new SemDesconto();
 		
-		return 0;
+		d1.setProximo(d2);
+		d2.setProximo(d3);
+		
+		return d1.desconta(orcamento);
 	}
 }
