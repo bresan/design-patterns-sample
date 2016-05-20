@@ -1,7 +1,7 @@
 package designpatterns;
 
 public class TesteDeImpostos {
-
+ 
 	public static void main(String[] args) {
 		Imposto iss = new ISS();
 		Imposto icms = new ICMS();
